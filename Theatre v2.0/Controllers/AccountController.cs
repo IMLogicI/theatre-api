@@ -19,9 +19,25 @@ namespace Theatre_v2._0.Controllers
         [HttpGet]
         public IHttpActionResult Authorize([FromBody] AuthorizationData authorizationData)
         {
-            accountDomain.Add(authorizationData);
+            if (!accountDomain.Check(authorizationData))
+            {
+                return NotFound();
+            }
 
-            return Ok(accountDomain.Get(4));
+            return Ok();
+        }
+
+        [Route("registration")]
+        [HttpPost]
+        public IHttpActionResult Registration([FromBody] AuthorizationData registrationData)
+        {
+            if (accountDomain.Exists(registrationData))
+            {
+                return NotFound();
+            }
+
+            accountDomain.Add(registrationData);
+            return Ok();
         }
     }
 }

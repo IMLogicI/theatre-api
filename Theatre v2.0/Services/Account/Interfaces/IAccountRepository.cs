@@ -11,5 +11,6 @@ namespace Theatre_v2._0.Services.Account.Interfaces
     {
         void Add(DbAccount account);
         DbAccount Get(int id);
+        DbAccount GetByEmail(string email);
     }
 }

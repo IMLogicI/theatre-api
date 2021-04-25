@@ -28,14 +28,43 @@ namespace Theatre_v2._0.Services.Account
             mapper = MappingOperations.GetMapper();
         }
 
-        public void Add(AuthorizationData dbAccount)
+        public void Add(AuthorizationData authorizationData)
         {
-            accountRepository.Add(dbAccount.Map<AuthorizationData,DbAccount>(mapper));
+            accountRepository.Add(authorizationData.Map<AuthorizationData,DbAccount>(mapper));
         }
 
         public AuthorizationData Get(int id)
         {
             return accountRepository.Get(id).Map<DbAccount,AuthorizationData>(mapper);
+        }
+
+        public bool Check(AuthorizationData authorizationData)
+        {
+            var baseData = accountRepository.GetByEmail(authorizationData.Login);
+
+            if (baseData == null)
+            {
+                return false;
+            }
+
+            if (baseData.Password != authorizationData.Password)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool Exists(AuthorizationData authorizationData)
+        {
+            var baseData = accountRepository.GetByEmail(authorizationData.Login);
+
+            if (baseData == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

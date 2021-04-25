@@ -34,5 +34,10 @@ namespace Theatre_v2._0.Services.Account
         {
             return _dataContext.GetQueryable<DbAccount>().FirstOrDefault(a => a.Id == id);
         }
+
+        public DbAccount GetByEmail(string email)
+        {
+            return _dataContext.GetQueryable<DbAccount>().FirstOrDefault(a => a.Email == email) ?? new DbAccount{ };
+        }
     }
 }

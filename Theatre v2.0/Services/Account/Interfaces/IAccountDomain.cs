@@ -12,5 +12,7 @@ namespace Theatre_v2._0.Services.Account.Interfaces
     {
         void Add(AuthorizationData dbAccount);
         AuthorizationData Get(int id);
+        bool Check(AuthorizationData authorizationData);
+        bool Exists(AuthorizationData authorizationData);
     }
 }
