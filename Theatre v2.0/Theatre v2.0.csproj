@@ -142,6 +142,10 @@
     <Compile Include="Migrations\202102092221374_AddAccountTable.designer.cs">
       <DependentUpon>202102092221374_AddAccountTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104251300573_AddTheatreTables.cs" />
+    <Compile Include="Migrations\202104251300573_AddTheatreTables.designer.cs">
+      <DependentUpon>202104251300573_AddTheatreTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthorizationData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,8 +153,21 @@
     <Compile Include="Services\Account\AccountRepository.cs" />
     <Compile Include="Services\Account\Interfaces\IAccountDomain.cs" />
     <Compile Include="Services\Account\Interfaces\IAccountRepository.cs" />
+    <Compile Include="Services\DataAccess\Config\DbAccountConfig.cs" />
+    <Compile Include="Services\DataAccess\Config\DbActorConfig.cs" />
+    <Compile Include="Services\DataAccess\Config\DbBookConfig.cs" />
+    <Compile Include="Services\DataAccess\Config\DbJenreConfig.cs" />
+    <Compile Include="Services\DataAccess\Config\DbScheduleConfig.cs" />
+    <Compile Include="Services\DataAccess\Config\DbShowActorsConfig.cs" />
+    <Compile Include="Services\DataAccess\Config\DbShowConfig.cs" />
     <Compile Include="Services\DataAccess\DataContext.cs" />
     <Compile Include="Services\DataAccess\Models\DbAccount.cs" />
+    <Compile Include="Services\DataAccess\Models\DbActor.cs" />
+    <Compile Include="Services\DataAccess\Models\DbBook.cs" />
+    <Compile Include="Services\DataAccess\Models\DbJenre.cs" />
+    <Compile Include="Services\DataAccess\Models\DbSchedule.cs" />
+    <Compile Include="Services\DataAccess\Models\DbShow.cs" />
+    <Compile Include="Services\DataAccess\Models\DbShowActors.cs" />
     <Compile Include="Services\Mapping\MappingOperations.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +188,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202102092221374_AddAccountTable.resx">
       <DependentUpon>202102092221374_AddAccountTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104251300573_AddTheatreTables.resx">
+      <DependentUpon>202104251300573_AddTheatreTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
