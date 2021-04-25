@@ -6,7 +6,6 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Web;
 using Theatre_v2._0.Services.DataAccess.Models;
 
 namespace Theatre_v2._0.Services.DataAccess
@@ -25,6 +24,12 @@ namespace Theatre_v2._0.Services.DataAccess
         }
 
         public DbSet<DbAccount> Account { get; set; }
+        public DbSet<DbActor> Actor { get; set; }
+        public DbSet<DbBook> Book { get; set; }
+        public DbSet<DbJenre> Jenre { get; set; }
+        public DbSet<DbSchedule> Schedule { get; set; }
+        public DbSet<DbShow> Show { get; set; }
+        public DbSet<DbShowActors> ShowActors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
